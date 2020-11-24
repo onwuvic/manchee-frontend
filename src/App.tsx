@@ -1,16 +1,15 @@
 import React from 'react';
-import { Button, DatePicker, version } from "antd";
-import './App.scss';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './assets/scss/main.scss';
+import Home from './views/Home/Home';
 
 function App() {
   return (
-    <div className="App">
-      <h1>antd version: {version}</h1>
-      <DatePicker />
-      <Button type="primary" style={{ marginLeft: 8 }}>
-        Primary Button
-      </Button>
-    </div>
+    <Router>
+      <Switch>
+        <Route path='/' exact component={Home} />
+      </Switch>
+    </Router>
   );
 }
 
